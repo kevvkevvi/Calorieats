@@ -1,4 +1,4 @@
-Title: Calorieats - My Body My Way
+Calorieats - My Body My Way
 
 Team Members:
 - Kevin Li:  kjl2185
