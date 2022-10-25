@@ -121,7 +121,6 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
-    pg (0.21.0)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -233,7 +232,6 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   jquery-rails
-  pg (~> 0.2)
   pry
   pry-byebug
   rails (= 4.2.11)
