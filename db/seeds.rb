@@ -24,8 +24,8 @@ movies.each do |movie|
 end
 
 users = [
-  { username: 'user1', password_digest: '123456', height: '170', weight: '60', age: '20', gender: 'male', sports_level: 'active' },
-  { username: 'user2', password_digest: '123456', height: '165', weight: '75', age: '28', gender: 'female', sports_level: 'seldom' },
+  { username: 'user1', password_digest: '123456', height: '170', weight: '60', age: '20', gender: 'Male', sports_level: 'Active' },
+  { username: 'user2', password_digest: '123456', height: '165', weight: '75', age: '28', gender: 'Female', sports_level: 'Seldom' },
 ]
 
 users.each do |user|

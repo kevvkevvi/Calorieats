@@ -3,26 +3,26 @@
 
 <%= form_tag url: calculator_recommendation_path do %>
   <%= label :user, :height, 'Height', class: 'col-form-label' %>
-  <%= number_field :user, :height, class: 'form-control'%><br>
+  <%= number_field :user, :height, :value => @user.height, class: 'form-control'%><br>
   <%= label :user, :weight, 'Weight', class: 'col-form-label' %>
-  <%= number_field :user, :weight, class: 'form-control' %><br>
+  <%= number_field :user, :weight, :value => @user.weight, class: 'form-control' %><br>
   <%= label :user, :age, 'Age', class: 'col-form-label' %>
-  <%= number_field :user, :age, class: 'form-control' %><br>
+  <%= number_field :user, :age, :value => @user.age, class: 'form-control' %><br>
 
   <%= label :user, :gender, 'Sex', class: 'col-form-label' %><br>
-  <%= radio_button_tag(:gender, "Female") %>
+  <%= radio_button_tag(:gender, "Female", @user.gender === 'Female') %>
   <%= label_tag(:gender, "Female") %>
-  <%= radio_button_tag(:gender, "Male") %>
+  <%= radio_button_tag(:gender, "Male", @user.gender === 'Male') %>
   <%= label_tag(:gender, "Male") %> <br>
 
   <%= label :user, :sports_level, 'Sports Level', class: 'col-form-label' %><br>
-  <%= radio_button_tag(:sports_level, "Seldom") %>
+  <%= radio_button_tag(:sports_level, "Seldom", @user.sports_level === 'Seldom') %>
   <%= label_tag(:sports_level, "Seldom (0-1 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Slight") %>
+  <%= radio_button_tag(:sports_level, "Slight", @user.sports_level === 'Slight') %>
   <%= label_tag(:sports_level, "Slight (1-3 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Medium") %>
+  <%= radio_button_tag(:sports_level, "Medium", @user.sports_level === 'Medium') %>
   <%= label_tag(:sports_level, "Medium (4-5 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Active") %>
+  <%= radio_button_tag(:sports_level, "Active", @user.sports_level === 'Active') %>
   <%= label_tag(:sports_level, "Active (6-7 days/week)") %> <br><br>
 
   <%= button_tag "Reset", type: :reset, class: 'btn btn-secondary'%>
