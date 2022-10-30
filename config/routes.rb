@@ -1,6 +1,8 @@
 Rottenpotatoes::Application.routes.draw do
   get 'calculator/index'
 
+  get 'market/index'
+
   get 'users/login'
   get 'users/loginprocess'
   post 'users/login', to: 'users#loginprocess'
@@ -12,7 +14,9 @@ Rottenpotatoes::Application.routes.draw do
   get 'users/logout'
 
   get 'calculator/recommendation'
+  get 'market/cart'
   post 'calculator/index', to: 'calculator#recommendation'
+  post 'market/index', to: 'market#cart'
 
   resources :movies
   # map '/' to be a redirect to '/movies'
