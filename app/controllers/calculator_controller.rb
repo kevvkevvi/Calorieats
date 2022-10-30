@@ -1,14 +1,20 @@
 class CalculatorController < ApplicationController
+  helper :all
   def index
+    @user = User.find(session[:current_user])
   end
 
   def recommendation
     user_info = params[:user]
     user_hash = {'weight'=>user_info[:weight].to_d, 'height'=>user_info[:height].to_d, 
                  'age'=>user_info[:age].to_i, 'gender'=>params[:gender], 'sports_level'=>params[:sports_level]}
-    @bmi = (user_hash['weight'])*10000/(user_hash['height'])**2
-    puts user_hash
-    puts session[:current_user]
-  end
+    @bmi = user_hash['weight']/(user_hash['height']/100)**2
+    @bmi_result =  User.bmi_classifier(@bmi, user_info[:age])
+    # update user
+    @user = User.find(session[:current_user])
+    @user.update_attributes!(user_hash)
+    flash[:notice] = "#{@user.username}, your info has successfully updated and here is your report."
 
+    @recommended_food =  Market.recommended_food(@bmi_result, user_hash['sports_level'], user_hash['weight'])
+  end
 end

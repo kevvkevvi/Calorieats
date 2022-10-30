@@ -1,7 +1,14 @@
 <h2>BMI</h2>
 
-<p>Your BMI is <%= @bmi %></p>
+<p>Your BMI is <%= @bmi.round(2) %></p>
+
+<p>Your bmi falls within the <b><%= @bmi_result %></b> range</p>
 <h2>Recommended Sport</h2>
 
+<p><%= sports_recommendation(@bmi_result) %></p> 
 <h2>Recommended Foods</h2>
+
+<p><%= @recommended_food %></p> 
+
+<p><%= link_to "Shop them on our online store", market_index_path %></p> 
 

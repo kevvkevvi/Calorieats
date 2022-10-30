@@ -10,4 +10,14 @@ class Market < ActiveRecord::Base
       where(category: category.map(&:upcase)).order
     end
   end
+  def self.recommended_food(bmi_result, sports_level, weight)
+    # iter 2 add to shopping cart
+    if bmi_result == 'underweight'
+      'More protein such as beef'
+    elsif bmi_result == 'overweight' or bmi_result == 'obese'
+      'More vegetable and fruit such as broccoli and banana'
+    elsif bmi_result == 'healthy'
+      'Balanced diet of protein, vegetable, fruit and dairy'
+    end
+  end
 end

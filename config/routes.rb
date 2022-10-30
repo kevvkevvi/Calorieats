@@ -18,7 +18,6 @@ Rottenpotatoes::Application.routes.draw do
   post 'calculator/index', to: 'calculator#recommendation'
   post 'market/index', to: 'market#cart'
 
-  resources :movies
   # map '/' to be a redirect to '/movies'
   root :to => redirect('/users/login')
 end
