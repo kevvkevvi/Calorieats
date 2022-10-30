@@ -1,0 +1,25 @@
+<h1>Calculator</h1>
+<p>Welcome to Calorieats Market!</p>
+
+
+<h1>Input the quantity of goods that you want for each one</h1>
+<h2>Each portion is 1 pound</h2>
+<%= form_tag url: market_cart_path do %>
+  <%= label :user, :number1, 'Beef', class: 'col-form-label' %>
+  <%= number_field :user, :number1, class: 'form-control'%><br>
+  <%= label :user, :number2, 'Lamb', class: 'col-form-label' %>
+  <%= number_field :user, :number2, class: 'form-control'%><br>
+  <%= label :user, :number3, 'Broccoli', class: 'col-form-label' %>
+  <%= number_field :user, :number3, class: 'form-control'%><br>
+  <%= label :user, :number4, 'Carrot', class: 'col-form-label' %>
+  <%= number_field :user, :number4, class: 'form-control'%><br>
+  <%= label :user, :number5, 'Milk', class: 'col-form-label' %>
+  <%= number_field :user, :number5, class: 'form-control'%><br>
+  <%= label :user, :number6, 'Banana', class: 'col-form-label' %>
+  <%= number_field :user, :number6, class: 'form-control'%><br>
+  <%= label :user, :number7, 'Apple', class: 'col-form-label' %>
+  <%= number_field :user, :number7, class: 'form-control'%><br>
+
+  <%= button_tag "Reset", type: :reset, class: 'btn btn-secondary'%>
+  <%= submit_tag "checkout", class: 'btn btn-primary'%>
+<% end %>
