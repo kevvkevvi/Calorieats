@@ -4,24 +4,23 @@ Feature: shop in market
   I want to shop grocery in market
   So that I can follow recommendations and eat healthy
 
-Background: I'm shopping grocery in market
-  And I am on the Calorieats market page
+Background: I am shopping grocery in market
+  And I am on the Calorieats market index page
 
-Scenario: input in number of each item needed and receive infomation on total cost and total calories 
+Scenario: input in quantity of food and receive infomation on total cost and total calories 
   Given I am on the market_index page
-  When I fill quantity on "Beef" with "2"
+  When I fill in quantity on "Beef" with "2"
   Then I press "Reset"
-  Then I should still be on market_index page
+  Then I should be on market_index page
   Then I should see quantity of "Beef" revert to empty
 
-
-  When I fill quantity on "Beef" with "3"
-  When I fill quantity on "Lamb" with "2"
-  When I fill quantity on "Broccoli" with "3"
-  When I fill quantity on "Carrot" with "1"
-  When I fill quantity on "Milk" with "1"
-  When I fill quantity on "Banana" with "1"
-  When I fill quantity on "Apple" with "1"
+  When I fill in quantity on "Beef" with "3"
+  When I fill in quantity on "Lamb" with "2"
+  When I fill in quantity on "Broccoli" with "3"
+  When I fill in quantity on "Carrot" with "1"
+  When I fill in quantity on "Milk" with "1"
+  When I fill in quantity on "Banana" with "1"
+  When I fill in quantity on "Apple" with "1"
   Then I press "checkout"
   Then I should be on market_cart page
   Then I should see "Checkout Page"
