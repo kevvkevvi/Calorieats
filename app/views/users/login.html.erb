@@ -6,8 +6,8 @@
 <%= form_tag url: users_loginprocess_path do %>
   <%= label :user, :username, 'Username', class: 'col-form-label' %>
   <%= text_field :user, :username, class: 'form-control'%><br>
-  <%= label :user, :password_digest, 'Password', class: 'col-form-label' %>
-  <%= text_field :user, :password_digest, class: 'form-control', type: 'password' %><br>
+  <%= label :user, :password, 'Password', class: 'col-form-label' %>
+  <%= text_field :user, :password, class: 'form-control', type: 'password' %><br>
   <%= link_to "Sign Up", users_register_path , class: 'btn btn-secondary' %>
   <%= submit_tag "Sign In!", class: 'btn btn-primary'%>
 <% end %>
