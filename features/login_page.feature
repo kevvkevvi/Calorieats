@@ -49,14 +49,14 @@ Scenario: sign up for Calorieats account then logout and try to sign in with inc
   Then I should see "Hi bobthebuilder, you have successfully registered."
   Then I should be on calculator_index page
   When I follow "Log out"
-  # Then I should be on users_login
-  # When I fill in "Username" with "bobthebuilder"
-  # When I fill in "Password" with "600555"
-  # When I press "Sign In!"
-  # Then I should see "Username or password not correct"
-  # Then I should be on users_login
-  When I fill in "Username" with "robthebuilder"
-  # When I fill in "Password" with "500666"
+  Then I should be on users_login
+  When I fill in "Username" with "bobthebuilder"
+  When I fill in "Password" with "600555"
   When I press "Sign In!"
-  # Then I should see "Username or password not correct"
-  # Then I should be on users_login page
+  Then I should see "Username or password not correct"
+  Then I should be on users_login
+  When I fill in "Username" with "robthebuilder"
+  When I fill in "Password" with "500666"
+  When I press "Sign In!"
+  Then I should see "Username or password not correct"
+  Then I should be on users_login page
