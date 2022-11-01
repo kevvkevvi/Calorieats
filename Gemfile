@@ -10,6 +10,9 @@ gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 gem 'icheck-rails'
 
+gem 'factory_girl_rails'
+gem 'factory_bot'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
