@@ -25,11 +25,17 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
+When /I choose the following genders: (.*)/ do |gender|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-  pending "Fill in this step in movie_steps.rb"
+  choose "#{gender}"
+  # find("#{gender}").click
+end
+
+When /I choose the following sports levels: (.*)/ do |level|
+  choose "#{level}"
+  # find("#{gender}").click
 end
 
 # Part 2, Step 3

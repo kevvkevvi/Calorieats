@@ -13,8 +13,15 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
-    when /^the movies page$/ then '/movies'
+    when /^the (Calorieats )?login\s?page$/ then 'users/login'
+    # ***doesn't work: when /^(?:|I )should be on users_register page$/ then 'users/register'
+    when /users_register page/ then 'users_register'
+    # ***doesn't work: when /^(?:|I )should be on calculator_index page$/ then 'calculator/index'
+    when /calculator_index page/ then Rails.root + '/calculator/index'
+    # when /login page/ then 'users/login'
+    when /calculator_recommendation page/ then '/calculator/recommendation'
+
+    when /^the (Calorieats )?calculator\s?page$/ then 'calculator/index'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
