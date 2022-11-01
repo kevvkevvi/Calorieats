@@ -8,7 +8,7 @@ Background: I'm shopping grocery in market
   And I am on the Calorieats market page
 
 Scenario: input in number of each item needed and receive infomation on total cost and total calories 
-  Given I am on the market page
+  Given I am on the market_index page
   When I fill quantity on "Beef" with "2"
   Then I press "Reset"
   Then I should still be on market_index page
@@ -23,7 +23,7 @@ Scenario: input in number of each item needed and receive infomation on total co
   When I fill quantity on "Banana" with "1"
   When I fill quantity on "Apple" with "1"
   Then I press "checkout"
-  Then I should be on checkout_index page
+  Then I should be on market_cart page
   Then I should see "Checkout Page"
   Then I should see "Your total cost is 97.99999999999999"
   Then I should see "The total calories of the food you buy is 8375"
