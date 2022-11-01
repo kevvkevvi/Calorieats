@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def loginprocess
-    puts params[:user][:username]
+    puts params[:user]
     user = User.auth_login(params[:user][:username], params[:user][:password])
-    if user 
+    if user
         session['current_user'] = user.id 
         redirect_to calculator_index_path
     else 
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def registerprocess
-    puts params[:user][:username]
     user_exists = User.auth_register(params[:user][:username])
     if not user_exists 
         @user_hash = {'username' => params[:user][:username], 'password_digest' => params[:user][:password]}
