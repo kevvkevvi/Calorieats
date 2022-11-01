@@ -23,6 +23,10 @@ module NavigationHelpers
     when /users_login/ then '/users/login'
 
     when /^the (Calorieats )?calculator\s?page$/ then 'calculator/index'
+    
+    when /^the (Calorieats )?market\s?page$/ then 'market/index'
+    when /^the market_index page for ("Reset")?$/ then '/market/index'
+    when /^the market_cart page for ("checkout")?$/ then '/market/cart'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
