@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
 RSpec.describe "Market", type: :request do
   describe "GET /index" do
