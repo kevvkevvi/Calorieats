@@ -2,12 +2,17 @@ class CalculatorController < ApplicationController
   helper :all
   def index
     @user = User.find(session[:current_user])
+    @gender = @user.gender
+    @sports_level = @user.sports_level
+    puts @sports_level
   end
 
   def recommendation
     user_info = params[:user]
+    puts params
     user_hash = {'weight'=>user_info[:weight].to_d, 'height'=>user_info[:height].to_d, 
                  'age'=>user_info[:age].to_i, 'gender'=>params[:gender], 'sports_level'=>params[:sports_level]}
+    puts user_hash
     @bmi = user_hash['weight']/(user_hash['height']/100)**2
     @bmi_result =  User.bmi_classifier(@bmi, user_info[:age])
     # update user

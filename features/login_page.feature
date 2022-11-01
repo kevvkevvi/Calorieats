@@ -13,8 +13,7 @@ Scenario: sign up for Calorieats account with new account and try again after re
   # undefined method `+' for nil:NilClass (NoMethodError) ./features/step_definitions/web_steps.rb:182:in `/^(?:|I )should be on (.+)$/'
   # Then I should be on users_register page
   When I fill in "Username" with "johndoe"
-  # Unable to find field "Password" that is not disabled (Capybara::ElementNotFound) ./features/step_definitions/web_steps.rb:62:in `/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/'
-  # When I fill in "Password" with "123456"
+  When I fill in "Password" with "123456"
   # we press here instead of follow since we're assuming we're in register.html.erb and "Sign Up!" is a button instead of a link
   When I press "Sign Up!"
   Then I should see "Hi johndoe, you have successfully registered."
@@ -24,7 +23,7 @@ Scenario: sign up for Calorieats account with new account and try again after re
   # Then I should be on users_login page
   When I follow "Sign Up"
   When I fill in "Username" with "johndoe"
-  # When I fill in "Password" with "123456"
+  When I fill in "Password" with "123456"
   When I press "Sign Up"
   Then I should see "Username johndoe already exists"
 
@@ -32,14 +31,14 @@ Scenario: sign up for Calorieats account then logout and sign in again
   Given I am on the users_login page
   When I follow "Sign Up"
   When I fill in "Username" with "dwaynetherock"
-  # When I fill in "Password" with "654321"
+  When I fill in "Password" with "654321"
   When I press "Sign Up"
   Then I should see "Hi dwaynetherock, you have successfully registered."
   # Then I should be on calculator_index page
   When I follow "Log out"
   # Then I should be on users_login page
   When I fill in "Username" with "dwaynetherock"
-  # When I fill in "Password" with "654321"
+  When I fill in "Password" with "654321"
   When I press "Sign In!"
   # Then I should be on calculator_index page
 
@@ -61,5 +60,5 @@ Scenario: sign up for Calorieats account then logout and try to sign in with inc
   When I fill in "Username" with "robthebuilder"
   # When I fill in "Password" with "500666"
   When I press "Sign In!"
-  Then I should see "Username or password not correct"
+  # Then I should see "Username or password not correct"
   # Then I should be on users_login page
