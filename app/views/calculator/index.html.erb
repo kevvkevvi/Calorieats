@@ -10,20 +10,20 @@
   <%= number_field :user, :age, :value => @user.age, class: 'form-control' %><br>
 
   <%= label :user, :gender, 'Sex', class: 'col-form-label' %><br>
-  <%= radio_button_tag(:gender, "Female", @user.gender === 'Female') %>
-  <%= label_tag(:gender, "Female") %>
-  <%= radio_button_tag(:gender, "Male", @user.gender === 'Male') %>
-  <%= label_tag(:gender, "Male") %> <br>
+  <input type="radio" id="female" name="gender" value="Female" <%= @gender==="Female" ? "checked" : "" %> >
+  <label for="female">Female</label>
+  <input type="radio" id="male" name="gender" value="Male" <%= @gender==="Male" ? "checked" : "" %>>
+  <label for="male">Male</label><br><br>
 
   <%= label :user, :sports_level, 'Sports Level', class: 'col-form-label' %><br>
-  <%= radio_button_tag(:sports_level, "Seldom", @user.sports_level === 'Seldom') %>
-  <%= label_tag(:sports_level, "Seldom (0-1 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Slight", @user.sports_level === 'Slight') %>
-  <%= label_tag(:sports_level, "Slight (1-3 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Medium", @user.sports_level === 'Medium') %>
-  <%= label_tag(:sports_level, "Medium (4-5 days/week)") %> <br>
-  <%= radio_button_tag(:sports_level, "Active", @user.sports_level === 'Active') %>
-  <%= label_tag(:sports_level, "Active (6-7 days/week)") %> <br><br>
+  <input type="radio" id="seldom" name="sports_level" value="Seldom" <%= @sports_level==="Seldom" ? "checked" : "" %>>
+  <label for="seldom">Seldom (0-1 days/week)</label>
+  <input type="radio" id="slight" name="sports_level" value="Slight" <%= @sports_level==="Slight" ? "checked" : "" %>>
+  <label for="slight">Slight (1-3 days/week)</label>
+  <input type="radio" id="medium" name="sports_level" value="Medium" <%= @sports_level==="Medium" ? "checked" : "" %>>
+  <label for="medium">Medium (4-5 days/week)</label>
+  <input type="radio" id="active" name="sports_level" value="Active" <%= @sports_level==="Active" ? "checked" : "" %>>
+  <label for="active">Active (6-7 days/week)</label><br><br>
 
   <%= button_tag "Reset", type: :reset, class: 'btn btn-secondary'%>
   <%= submit_tag "Calculate", class: 'btn btn-primary'%>

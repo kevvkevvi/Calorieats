@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the (Calorieats )?login\s?page$/ then 'users/login'
     # ***doesn't work: when /^(?:|I )should be on users_register page$/ then 'users/register'
-    when /users_register page/ then 'users_register'
+    when /users_register page/ then '/users/register'
     # ***doesn't work: when /^(?:|I )should be on calculator_index page$/ then 'calculator/index'
     when /calculator_index page/ then Rails.root + '/calculator/index'
     # when /login page/ then 'users/login'
