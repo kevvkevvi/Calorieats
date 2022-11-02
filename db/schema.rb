@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20221030000415) do
 
-
   create_table "markets", force: :cascade do |t|
     t.string  "name"
     t.string  "category"
