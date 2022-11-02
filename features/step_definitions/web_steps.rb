@@ -62,6 +62,12 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   find_field(field).set(value)
 end
 
+When /^(?:|I )should see "([^"]*)" revert to empty$/ do |field|
+  field = find_field(field)
+  field_value = (field.tag_name == 'textarea') ? field.text : field.value
+  expect(field_value).to eq ""
+end
+
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
 end
