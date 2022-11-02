@@ -6,23 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-movies = [
-  { title: 'Aladdin', rating: 'G', release_date: '25-Nov-1992' },
-  { title: 'The Terminator', rating: 'R', release_date: '26-Oct-1984' },
-  { title: 'When Harry Met Sally', rating: 'R', release_date: '21-Jul-1989' },
-  { title: 'The Help', rating: 'PG-13', release_date: '10-Aug-2011' },
-  { title: 'Chocolat', rating: 'PG-13', release_date: '5-Jan-2001' },
-  { title: 'Amelie', rating: 'R', release_date: '25-Apr-2001' },
-  { title: '2001: A Space Odyssey', rating: 'G', release_date: '6-Apr-1968' },
-  { title: 'The Incredibles', rating: 'PG', release_date: '5-Nov-2004' },
-  { title: 'Raiders of the Lost Ark', rating: 'PG', release_date: '12-Jun-1981' },
-  { title: 'Chicken Run', rating: 'G', release_date: '21-Jun-2000' },
-]
-
-movies.each do |movie|
-  Movie.create!(movie)
-end
-
 users = [
   { username: 'user1', password_digest: '123456', height: '170', weight: '60', age: '20', gender: 'Male', sports_level: 'Active' },
   { username: 'user2', password_digest: '123456', height: '165', weight: '75', age: '28', gender: 'Female', sports_level: 'Seldom' },
@@ -33,13 +16,13 @@ users.each do |user|
 end
 
 markets = [
-  {name: 'beef(1lb)', category: 'meat', price: '14.99'， calories: '1250'},
-  {name: 'lamb(1lb)', category: 'meat', price: '19.99'， calories: '1331'},
-  {name: 'broccoli(1lb)', category: 'vegetable', price: '2.2'， calories: '153'},
-  {name: 'carrot(1lb)', category: 'vegetable', price: '0.52'， calories: '186'},
-  {name: 'milk(1lb)', category: 'dairy', price: '2.65'， calories: '677'},
-  {name: 'banana(1lb)', category: 'fruit', price: '0.79'， calories: '404'},
-  {name: 'apple(1lb)', category: 'fruit', price: '2.49'， calories: '237'},
+  {name: 'beef(1lb)', category: 'meat', price: '14.99', calories: '1250'},
+  {name: 'lamb(1lb)', category: 'meat', price: '19.99', calories: '1331'},
+  {name: 'broccoli(1lb)', category: 'vegetable', price: '2.2', calories: '153'},
+  {name: 'carrot(1lb)', category: 'vegetable', price: '0.52', calories: '186'},
+  {name: 'milk(1lb)', category: 'dairy', price: '2.65', calories: '677'},
+  {name: 'banana(1lb)', category: 'fruit', price: '0.79', calories: '404'},
+  {name: 'apple(1lb)', category: 'fruit', price: '2.49', calories: '237'},
 ]
 
 markets.each do |market|

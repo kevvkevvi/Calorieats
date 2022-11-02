@@ -9,6 +9,7 @@ Rottenpotatoes::Application.configure do
   config.action_controller.perform_caching = true
 
   config.eager_load = true
+  config.log_level = :info
 
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
