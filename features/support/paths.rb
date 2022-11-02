@@ -25,8 +25,15 @@ module NavigationHelpers
     when /^the (Calorieats )?calculator\s?page$/ then 'calculator/index'
     
     when /^the (Calorieats )?market\s?page$/ then 'market/index'
-    when /^the market_index page for ("Reset")?$/ then '/market/index'
-    when /^the market_cart page for ("checkout")?$/ then '/market/cart'
+    when /market_index/ then '/market/index'
+    
+    #when /^the market_index page for ("Reset")?$/ then '/market/index'
+
+    when /^the (Calorieats )?market\s?page$/ then 'market/cart'
+    when /market_index/ then '/market/cart'
+    when /market_cart/ then '/market/cart'
+    when /^the market_index page for ("checkout")?$/ then '/market/cart'
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
