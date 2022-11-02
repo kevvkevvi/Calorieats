@@ -15,11 +15,11 @@ class MarketController < ApplicationController
     puts session[:current_user]
   end
 
-  def show
-    name = params[:name] # retrieve movie ID from URI route
-    @name = Market.find(name) # look up movie by unique ID
+  #def show
+   # name = params[:name] # retrieve movie ID from URI route
+    #@name = Market.find(name) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
-  end
+  #end
 
   # def index
   #   @all_category = Market.all_category
