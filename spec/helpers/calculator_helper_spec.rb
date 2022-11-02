@@ -1,15 +1,18 @@
 require 'rails_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
-# Specs in this file have access to a helper object that includes
-# the CalculatorHelper. For example:
-#
-# describe CalculatorHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe CalculatorHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe CalculatorHelper do 
+  # let!(:bmi_result1) { FactoryGirl.create(:bmi_result, result: 'healthy', :id => 1) }
+  describe '.sports_recommendation' do
+    it 'input is healthy' do 
+      expect(sports_recommendation('healthy')).to eq('Keep a balance of aerobic and anaerobic exercise such as jogging, swimming and pump iron')
+    end
+    it 'input is underweight' do 
+      expect(sports_recommendation('underweight')).to eq('Do more anaerobic exercise to increase your muscle such as push up and pump iron')
+    end
+    it 'input is overweight' do 
+      expect(sports_recommendation('overweight')).to eq('Do more aerobic exercise to reduce your body fat as jogging and swimming')
+    end
+  end
 end
