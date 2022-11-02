@@ -1,5 +1,5 @@
 class CreateMarket < ActiveRecord::Migration
-    def market
+    def change
       create_table :markets do |m|
         m.string :name
         m.string :category
