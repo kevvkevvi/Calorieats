@@ -15,6 +15,7 @@ class CalculatorController < ApplicationController
     puts user_hash
     @bmi = user_hash['weight']/(user_hash['height']/100)**2
     @bmi_result =  User.bmi_classifier(@bmi, user_info[:age])
+    @sports_suggestion = User.sports_recommendation(@bmi_result)
     # update user
     @user = User.find(session[:current_user])
     @user.update_attributes!(user_hash)
