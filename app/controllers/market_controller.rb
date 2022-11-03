@@ -1,7 +1,7 @@
 class MarketController < ApplicationController
-  def index
-    @markets = Market.all_category
-  end
+  # def index
+  #   @markets = Market.all_category
+  # end
 
   def cart
     user_info = params[:user]
