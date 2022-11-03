@@ -4,7 +4,12 @@ SimpleCov.start 'rails'
 
 describe MarketController do
     describe 'GET market#index' do
-  
+        let!(:user1) { FactoryGirl.create(:user, username: 'joe', password_digest: '123', 'gender': 'Male', weight: '90', height: '200', age: '19', sports_level: 'Active', :id => 1) }
+        
+        it 'should add food to cart' do
+            post :cart, {:user=>{:n1=>"3", :n2=>"2", :n3=>"3", :n4=>"1", :n5=>"1", :n6=>"1", :n7=>"1"}}
+            expect(response).to redirect_to(market_cart_path)
+
     end
 
 
