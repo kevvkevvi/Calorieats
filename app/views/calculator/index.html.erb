@@ -2,12 +2,12 @@
 <p>Welcome to Calorieats</p>
 
 <%= form_tag url: calculator_recommendation_path do %>
-  <%= label :user, :height, 'Height', class: 'col-form-label' %>
-  <%= number_field :user, :height, :value => @user.height, class: 'form-control'%><br>
-  <%= label :user, :weight, 'Weight', class: 'col-form-label' %>
-  <%= number_field :user, :weight, :value => @user.weight, class: 'form-control' %><br>
+  <%= label :user, :height, 'Height(cm)', class: 'col-form-label' %>
+  <%= number_field :user, :height, :value => @user.height, min:10, max:300, class: 'form-control'%><br>
+  <%= label :user, :weight, 'Weight(kg)', class: 'col-form-label' %>
+  <%= number_field :user, :weight, :value => @user.weight, min:5, max:500, class: 'form-control' %><br>
   <%= label :user, :age, 'Age', class: 'col-form-label' %>
-  <%= number_field :user, :age, :value => @user.age, class: 'form-control' %><br>
+  <%= number_field :user, :age, :value => @user.age, min:0, max:200, class: 'form-control' %><br>
 
   <%= label :user, :gender, 'Sex', class: 'col-form-label' %><br>
   <input type="radio" id="female" name="gender" value="Female" <%= @gender==="Female" ? "checked" : "" %> >
