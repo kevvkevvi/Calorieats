@@ -1,10 +1,16 @@
 class CalculatorController < ApplicationController
   helper :all
   def index
-    @user = User.find(session[:current_user])
-    @gender = @user.gender
-    @sports_level = @user.sports_level
-    puts @sports_level
+    begin
+      @user = User.find(session[:current_user])
+    rescue
+      redirect_to users_login_path, notice: "Please log in"
+    else
+      @user = User.find(session[:current_user])
+      @gender = @user.gender
+      @sports_level = @user.sports_level
+      puts @sports_level
+    end
   end
 
   def recommendation

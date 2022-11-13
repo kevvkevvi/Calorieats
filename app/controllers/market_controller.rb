@@ -3,6 +3,20 @@ class MarketController < ApplicationController
   #   @markets = Market.all_category
   # end
 
+  helper :all
+  def index
+    begin
+      @user = User.find(session[:current_user])
+    rescue
+      redirect_to users_login_path, notice: "Please log in"
+    else
+      @user = User.find(session[:current_user])
+      # @gender = @user.gender
+      # @sports_level = @user.sports_level
+      # puts @sports_level
+    end
+  end
+
   def cart
     user_info = params[:user]
     user_cash = {'n1'=>user_info[:number1].to_i,'n2'=>user_info[:number2].to_i,'n3'=>user_info[:number3].to_i,'n4'=>user_info[:number4].to_i,
