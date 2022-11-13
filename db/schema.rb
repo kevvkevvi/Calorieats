@@ -37,8 +37,16 @@ ActiveRecord::Schema.define(version: 20221030000415) do
     t.integer  "age"
     t.string   "gender"
     t.string   "sports_level"
+    t.integer "number1"
+    t.integer "number2"
+    t.integer "number3"
+    t.integer "number4"
+    t.integer "number5"
+    t.integer "number6"
+    t.integer "number7"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  
   end
 
 end
