@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = [
-  { username: 'user1', password_digest: '123456', height: '170', weight: '60', age: '20', gender: 'Male', sports_level: 'Active', number1: 0, number2: 0,number3: 0,number4: 0,number5: 0,number6: 0,number7: 0},
-  { username: 'user2', password_digest: '123456', height: '165', weight: '75', age: '28', gender: 'Female', sports_level: 'Seldom', number1: 0, number2: 0,number3: 0,number4: 0,number5: 0,number6: 0,number7: 0},
+  { username: 'user1', password_digest: '123456', height: '170', weight: '60', age: '20', gender: 'Male', sports_level: 'Active'},
+  { username: 'user2', password_digest: '123456', height: '165', weight: '75', age: '28', gender: 'Female', sports_level: 'Seldom'},
 ]
 
 users.each do |user|
