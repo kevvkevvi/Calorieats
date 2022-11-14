@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20221030000415) do
     t.string  "category"
     t.decimal "price"
     t.integer "calories"
+    t.integer "number"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -29,6 +30,11 @@ ActiveRecord::Schema.define(version: 20221030000415) do
     t.datetime "updated_at"
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.string  "name"
+    t.integer "number"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -37,16 +43,15 @@ ActiveRecord::Schema.define(version: 20221030000415) do
     t.integer  "age"
     t.string   "gender"
     t.string   "sports_level"
-    t.integer "number1"
-    t.integer "number2"
-    t.integer "number3"
-    t.integer "number4"
-    t.integer "number5"
-    t.integer "number6"
-    t.integer "number7"
+    t.integer  "number1"
+    t.integer  "number2"
+    t.integer  "number3"
+    t.integer  "number4"
+    t.integer  "number5"
+    t.integer  "number6"
+    t.integer  "number7"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  
   end
 
 end

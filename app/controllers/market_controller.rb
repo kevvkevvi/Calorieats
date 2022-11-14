@@ -25,9 +25,46 @@ class MarketController < ApplicationController
               user_cash['n6']*(0.79)+user_cash['n7']*(2.49)
     @calory = user_cash['n1']*(1250)+user_cash['n2']*(1331)+user_cash['n3']*(153)+user_cash['n4']*(186)+user_cash['n5']*(677)+
                 user_cash['n6']*(404)+user_cash['n7']*(237)
+          
+    @pay1 = ""
+    @pay2 = ""
+    @pay3 = ""
+    @pay4 = ""
+    @pay5 = ""
+    @pay6 = ""
+    @pay7 = ""
+    if @cash == 0
+      @pay = "False"
+    else
+      @pay = "True"
+    end
+    if user_cash['n1'] > 0
+      @pay1 = "beef(1lb):" + user_cash['n1'].to_s
+    end
+    if user_cash['n2'] > 0
+      @pay2 = "lamb(1lb):" + user_cash['n2'].to_s 
+    end
+    if user_cash['n3'] > 0
+      @pay3 = "broccoli(1lb):" + user_cash['n3'].to_s
+    end
+    if user_cash['n4'] > 0
+      @pay4 = "carrot(1lb):" + user_cash['n4'].to_s 
+    end
+    if user_cash['n5'] > 0
+      @pay5 = "milk(1lb):" + user_cash['n5'].to_s 
+    end
+    if user_cash['n6'] > 0
+      @pay6 = "banana(1lb):" + user_cash['n6'].to_s
+    end
+    if user_cash['n7'] > 0
+      @pay7 = "apple(1lb):" + user_cash['n7'].to_s 
+    end
     puts user_cash
     puts session[:current_user]
+    # mar = Market.find_residue('lamb(1lb)')
+    # @num1 = mar[:number].to_d
   end
+
 
   #def show
    # name = params[:name] # retrieve movie ID from URI route

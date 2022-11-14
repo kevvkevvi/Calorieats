@@ -1,4 +1,3 @@
-
 class Market < ActiveRecord::Base
   # def self.all_category
   #   ['meat', 'vegetable', 'dairy', 'fruit']
@@ -10,15 +9,6 @@ class Market < ActiveRecord::Base
      # where(category: category.map(&:upcase)).order
     #end
   #end
-  # def self.checkout(n1,n2,n3,n4,n5,n6,n7)
-  #   cash = n1*(14.99)+n2*(19.99)+n3*(2.2)+n4*(0.52)+n5*(2.65)+n6*(0.79)+n7*(2.49)
-  #   cash
-  # end
-
-  # def self.calorie(n1,n2,n3,n4,n5,n6,n7)
-  #   calorie = n1*(1250)+n2*(1331)+n3*(153)+n4*(186)+n5*(677)+n6*(404)+n7*(237)
-  #   calorie
-  # end
 
   def self.recommended_food(bmi_result, sports_level, weight)
     # iter 2 add to shopping cart
@@ -30,4 +20,8 @@ class Market < ActiveRecord::Base
       'Balanced diet of protein, vegetable, fruit and dairy'
     end
   end
+
+  # def self.find_residue(name)
+  #   market = Market.find_by(name: name)
+  # end
 end

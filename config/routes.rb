@@ -15,6 +15,7 @@ Rottenpotatoes::Application.routes.draw do
 
   get 'calculator/recommendation'
   get 'market/cart'
+  get 'market/pay'
   post 'calculator/index', to: 'calculator#recommendation'
   post 'market/index', to: 'market#cart'
 
