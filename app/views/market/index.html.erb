@@ -5,7 +5,7 @@
 <h2>Each portion is 1 pound</h2>
 
 <%= form_tag url: market_cart_path do %>
-  <%= label :user, :number1, 'beef' , class: 'col-form-label' %>
+  <%= label :user, :number1, 'Beef', class: 'col-form-label' %>
   <%= number_field :user, :number1, :value => 0, min:0, max:200,class: 'form-control'%><br>
   <%= label :user, :number2, 'Lamb', class: 'col-form-label' %>
   <%= number_field :user, :number2, :value => 0, min:0, max:200,class: 'form-control'%><br>
