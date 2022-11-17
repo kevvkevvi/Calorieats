@@ -3,6 +3,16 @@ require 'simplecov'
 SimpleCov.start 'rails'
 
 describe CalculatorController do
+    describe 'GET calculator#login' do
+        it 'should redirect to login page' do
+            # expect(response).to redirect_to(users_login_path)
+            # expect(response).to render_template('login')
+            @request.session['current_user']=nil
+            get :index
+            expect(response).to redirect_to(users_login_path)
+        end
+    end
+    
     describe 'GET calculator#index' do
         let!(:user1) { FactoryGirl.create(:user, username: 'joe', password_digest: '123', 'gender': 'Male', 
                         weight: '90', height: '200', age: '19', sports_level: 'Active', :id => 1) }
