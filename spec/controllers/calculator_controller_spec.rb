@@ -31,6 +31,45 @@ describe CalculatorController do
 
         it "should give the right bmi result and food recommendation" do 
             @request.session['current_user'] = 1
+            post :recommendation, {:user=>{:height=>"-20", :weight=>"90", :age=>"20"},
+                                     :gender=>"Male", :sports_level=>"Active"}
+            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi_result)).to eql("NaN")
+        end
+    end
+
+    describe 'POST calculator#index' do 
+        let!(:user1) { FactoryGirl.create(:user, username: 'joe', password_digest: '123', 'gender': 'Male', 
+        weight: '70', height: '180', age: '22', sports_level: 'Active', :id => 1) }
+
+        it "should give the right bmi result and food recommendation" do 
+            @request.session['current_user'] = 1
+            post :recommendation, {:user=>{:height=>"200", :weight=>"-90", :age=>"20"},
+                                    :gender=>"Male", :sports_level=>"Active"}
+            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi_result)).to eql("NaN")
+        end
+    end
+
+    describe 'POST calculator#index' do 
+        let!(:user1) { FactoryGirl.create(:user, username: 'joe', password_digest: '123', 'gender': 'Male', 
+        weight: '70', height: '180', age: '22', sports_level: 'Active', :id => 1) }
+
+        it "should give the right bmi result and food recommendation" do 
+            @request.session['current_user'] = 1
+            post :recommendation, {:user=>{:height=>"200", :weight=>"90", :age=>"-20"},
+                                    :gender=>"Male", :sports_level=>"Active"}
+            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi_result)).to eql("NaN")
+        end
+    end
+
+    describe 'POST calculator#index' do 
+        let!(:user1) { FactoryGirl.create(:user, username: 'joe', password_digest: '123', 'gender': 'Male', 
+        weight: '70', height: '180', age: '22', sports_level: 'Active', :id => 1) }
+
+        it "should give the right bmi result and food recommendation" do 
+            @request.session['current_user'] = 1
             post :recommendation, {:user=>{:height=>"200", :weight=>"90", :age=>"20"},
                                      :gender=>"Male", :sports_level=>"Active"}
             expect(assigns(:bmi)).to eql(22.5)
