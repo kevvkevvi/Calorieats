@@ -39,7 +39,7 @@ Scenario: input in faulty information --> sad path
   Then I should see "Hi joe, you have successfully registered."
   Then I should be on calculator_index page
   When I press "Calculate"
-  Then I should see "Your BMI is NaN"
+  Then I should see "Weight must be between 1 and 500."
 
 Scenario: input negative weight --> sad path
   Given I am on the users_login page
@@ -57,7 +57,7 @@ Scenario: input negative weight --> sad path
   When I choose the following genders: Male
   When I choose the following sports levels: Active
   When I press "Calculate"
-  Then I should see "Weight must be between 0 and 500."
+  Then I should see "Weight must be between 1 and 500."
 
 
 Scenario: input negative height --> sad path
@@ -76,7 +76,7 @@ Scenario: input negative height --> sad path
   When I choose the following genders: Male
   When I choose the following sports levels: Active
   When I press "Calculate"
-  Then I should see "Height must be between 0 and 300."
+  Then I should see "Height must be between 1 and 300."
 
 Scenario: input negative age --> sad path
   Given I am on the users_login page
@@ -94,4 +94,4 @@ Scenario: input negative age --> sad path
   When I choose the following genders: Male
   When I choose the following sports levels: Active
   When I press "Calculate"
-  Then I should see "Age must be between 0 and 200."
+  Then I should see "Age must be between 1 and 200."

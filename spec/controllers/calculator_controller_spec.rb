@@ -33,7 +33,7 @@ describe CalculatorController do
             @request.session['current_user'] = 1
             post :recommendation, {:user=>{:height=>"-20", :weight=>"90", :age=>"20"},
                                      :gender=>"Male", :sports_level=>"Active"}
-            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi)).to eql(1)
             expect(assigns(:bmi_result)).to eql("NaN")
         end
     end
@@ -46,7 +46,7 @@ describe CalculatorController do
             @request.session['current_user'] = 1
             post :recommendation, {:user=>{:height=>"200", :weight=>"-90", :age=>"20"},
                                     :gender=>"Male", :sports_level=>"Active"}
-            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi)).to eql(1)
             expect(assigns(:bmi_result)).to eql("NaN")
         end
     end
@@ -59,7 +59,7 @@ describe CalculatorController do
             @request.session['current_user'] = 1
             post :recommendation, {:user=>{:height=>"200", :weight=>"90", :age=>"-20"},
                                     :gender=>"Male", :sports_level=>"Active"}
-            expect(assigns(:bmi)).to eql(0)
+            expect(assigns(:bmi)).to eql(1)
             expect(assigns(:bmi_result)).to eql("NaN")
         end
     end
