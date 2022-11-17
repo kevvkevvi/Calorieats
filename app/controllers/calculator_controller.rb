@@ -30,6 +30,7 @@ class CalculatorController < ApplicationController
       flash[:notice] = "Height must be between 1 and 300."
       @bmi = 1
       @bmi_result = 'NaN'
+      redirect_to calculator_index_path
       return
     end
 
@@ -37,6 +38,7 @@ class CalculatorController < ApplicationController
       flash[:notice] = "Age must be between 1 and 200."
       @bmi = 1
       @bmi_result = 'NaN'
+      redirect_to calculator_index_path
       return
     end
 
