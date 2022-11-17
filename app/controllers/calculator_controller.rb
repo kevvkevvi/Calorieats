@@ -18,22 +18,22 @@ class CalculatorController < ApplicationController
     user_hash = {'weight'=>user_info[:weight].to_d, 'height'=>user_info[:height].to_d, 
                  'age'=>user_info[:age].to_i, 'gender'=>params[:gender], 'sports_level'=>params[:sports_level]}
 
-    if user_hash['weight'].to_f < 0 or user_hash['weight'].to_f > 500
-      flash[:notice] = "Weight must be between 0 and 500."
+    if user_hash['weight'].to_f < 1 or user_hash['weight'].to_f > 500
+      flash[:notice] = "Weight must be between 1 and 500."
       @bmi = 0
       @bmi_result = 'NaN'
       return
     end
 
-    if user_hash['height'].to_f < 0 or user_hash['height'].to_f > 300
-      flash[:notice] = "Height must be between 0 and 300."
+    if user_hash['height'].to_f < 1 or user_hash['height'].to_f > 300
+      flash[:notice] = "Height must be between 1 and 300."
       @bmi = 0
       @bmi_result = 'NaN'
       return
     end
 
-    if user_hash['age'].to_f < 0 or user_hash['age'].to_f > 200
-      flash[:notice] = "Age must be between 0 and 200."
+    if user_hash['age'].to_f < 1 or user_hash['age'].to_f > 200
+      flash[:notice] = "Age must be between 1 and 200."
       @bmi = 0
       @bmi_result = 'NaN'
       return
