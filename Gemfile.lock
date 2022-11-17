@@ -138,6 +138,7 @@ GEM
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    pg (0.21.0)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -260,6 +261,7 @@ DEPENDENCIES
   factory_girl_rails
   icheck-rails
   jquery-rails
+  pg (~> 0.2)
   pry
   pry-byebug
   rails (= 4.2.11)
