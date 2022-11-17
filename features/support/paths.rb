@@ -33,7 +33,7 @@ module NavigationHelpers
     when /market_index/ then '/market/cart'
     when /market_cart/ then '/market/cart'
     when /^the market_index page for ("checkout")?$/ then '/market/cart'
-    
+    when /market_pay/ then '/market/pay'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
