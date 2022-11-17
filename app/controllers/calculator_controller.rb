@@ -20,21 +20,22 @@ class CalculatorController < ApplicationController
 
     if user_hash['weight'].to_f < 1 or user_hash['weight'].to_f > 500
       flash[:notice] = "Weight must be between 1 and 500."
-      @bmi = 0
+      @bmi = 1
       @bmi_result = 'NaN'
+      redirect_to calculator_index_path
       return
     end
 
     if user_hash['height'].to_f < 1 or user_hash['height'].to_f > 300
       flash[:notice] = "Height must be between 1 and 300."
-      @bmi = 0
+      @bmi = 1
       @bmi_result = 'NaN'
       return
     end
 
     if user_hash['age'].to_f < 1 or user_hash['age'].to_f > 200
       flash[:notice] = "Age must be between 1 and 200."
-      @bmi = 0
+      @bmi = 1
       @bmi_result = 'NaN'
       return
     end
