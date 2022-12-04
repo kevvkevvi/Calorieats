@@ -16,9 +16,16 @@
       <%= link_to "Calculator", calculator_index_path %>
       <%= link_to "Market", market_index_path %>
 
-      <div class="topnav-right">
-      <%= link_to "Log out", users_logout_path %>
-      </div>
+    <% if session[:current_user] %>
+        <div class="topnav-right">
+        <%= link_to "Log out", users_logout_path %>
+        </div>
+    <% else %>
+        <div class="topnav-right">
+        <%= link_to "Log in", users_login_path %>
+        </div>
+    <% end %>
+
     </nav>
     <div class="container">
       <%# Render "flash" messages in our application. This loads _flash.erb %>
