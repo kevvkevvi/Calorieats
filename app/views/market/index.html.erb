@@ -5,19 +5,19 @@
 <h2>Each portion is 1 pound</h2>
 
 <%= form_tag url: market_cart_path do %>
-  <%= label :user, :number1, 'Beef', class: 'col-form-label' %>
+  <%= label :user, :number1, 'Beef (price: 14.99, calories: 1250)', class: 'col-form-label' %>
   <%= number_field :user, :number1, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number2, 'Lamb', class: 'col-form-label' %>
+  <%= label :user, :number2, 'Lamb (price: 19.99, calories: 1331)', class: 'col-form-label' %>
   <%= number_field :user, :number2, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number3, 'Broccoli', class: 'col-form-label' %>
+  <%= label :user, :number3, 'Broccoli (price: 2.2, calories: 153)', class: 'col-form-label' %>
   <%= number_field :user, :number3, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number4, 'Carrot', class: 'col-form-label' %>
+  <%= label :user, :number4, 'Carrot (price: 0.52, calories: 186)', class: 'col-form-label' %>
   <%= number_field :user, :number4, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number5, 'Milk', class: 'col-form-label' %>
+  <%= label :user, :number5, 'Milk (price: 2.65, calories: 677)', class: 'col-form-label' %>
   <%= number_field :user, :number5, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number6, 'Banana', class: 'col-form-label' %>
+  <%= label :user, :number6, 'Banana (price: 0.79, calories: 404)', class: 'col-form-label' %>
   <%= number_field :user, :number6, :value => 0, min:0, max:200,class: 'form-control'%><br>
-  <%= label :user, :number7, 'Apple', class: 'col-form-label' %>
+  <%= label :user, :number7, 'Apple (price: 2.49, calories: 237)', class: 'col-form-label' %>
   <%= number_field :user, :number7, :value => 0, min:0, max:200,class: 'form-control'%><br>
 
   <%= button_tag "Reset", type: :reset, class: 'btn btn-secondary'%>
